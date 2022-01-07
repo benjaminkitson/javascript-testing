@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "sum_test": "jest",
+    "capitalise_test": "jest"
+  }
+}
