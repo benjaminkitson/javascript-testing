@@ -17,9 +17,9 @@ test('returns a sorted array when an array of length 2 is provided', () => {
 })
 
 test('returns a sorted array when any array of integers is passed to it', () => {
-  expect(sorts([3,6,1,2])).toStrictEqual([1,2,3,6])
+  expect(sorts([3,6,1,2,5,4,9,7,8])).toStrictEqual([1,2,3,4,5,6,7,8,9])
 })
 
-// test('should ignore any empty items', () => {
-//   expect(sorts([5, 6, 8, 1, 4, 2, 6, , 1, 6, 8, 3, , 2, 4, 2, 6, , 3, 6, 2, 5, , 3, 6, 2, , 4])).toStrictEqual([1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6, 6, 6, 8, 8])
-// })
+test('should ignore any empty items', () => {
+  expect(sorts([5, 6, 8, 1, 4, 2, 6, , 1, 6, 8, 3, , 2, 4, 2, 6, , 3, 6, 2, 5, , 3, 6, 2, , 4])).toStrictEqual([1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6, 6, 6, 8, 8])
+})
