@@ -9,7 +9,7 @@ function humanTime(secs) {
   if (hours === 0) {
     hoursText = ''
   } else {
-    hoursText = (hours === 1) ? `${hours} hour, ` : `${hours} hours`
+    hoursText = (hours === 1) ? `${hours} hour, ` : `${hours} hours, `
   }
 
   remainingSeconds %= 3600;
@@ -36,5 +36,7 @@ function humanTime(secs) {
 
   return `${hoursText}${minutesText}${secondsText}`
 }
+
+console.log(humanTime(10000))
 
 module.exports = humanTime;
