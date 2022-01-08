@@ -1,21 +1,40 @@
-const humanTime = require('./human_time.test.js')
+function humanTime(secs) {
+  if (typeof secs != 'number') return "Numbers only please!"
 
-test('return error message unless a number is provided', () => {
-  expect(humanTime("hello")).toBe("Numbers only please!")
-});
+  let remainingSeconds = secs;
 
-test('returns a string when a number is provided', () => {
-  expect(typeof (humanTime(1))).toBe('string')
-});
+  const hours = Math.floor(secs / 3600);
+  let hoursText
 
-test('returns the number of seconds when below 60 seconds', () => {
-  expect(humanTime(59)).toBe('59 seconds')
-})
+  if (hours === 0) {
+    hoursText = ''
+  } else {
+    hoursText = (hours === 1) ? `${hours} hour, ` : `${hours} hours`
+  }
 
-test('returns minutes and seconds when less than 60 minutes', () => {
-  expect(humanTime(65)).toBe('1 minute, 5 seconds')
-})
+  remainingSeconds %= 3600;
 
-test('returns hours, minutes and seconds when', () => {
-  expect(humanTime(3665)).toBe('1 hour, 1 minute, 5 seconds')
-})
+  const minutes = Math.floor(remainingSeconds / 60);
+  let minutesText;
+
+  if (minutes === 0) {
+    minutesText = ''
+  } else {
+    minutesText = (minutes === 1) ? `${minutes} minute, ` : `${minutes} minutes, `
+  }
+
+  remainingSeconds %= 60;
+
+  const seconds = remainingSeconds;
+  let secondsText;
+
+  if (seconds === 0) {
+    secondsText = ''
+  } else {
+    secondsText = (seconds === 1) ? `${seconds} second` : `${seconds} seconds`
+  }
+
+  return `${hoursText}${minutesText}${secondsText}`
+}
+
+module.exports = humanTime;
