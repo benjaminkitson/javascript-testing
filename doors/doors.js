@@ -13,12 +13,10 @@ function doors(number) {
         doorsArr[index] = !door
       }
     })
-    console.log(doorsArr)
   }
 
+  return doorsArr.filter(door => door === true).length
 
 }
-
-doors(5)
 
 module.exports = doors
