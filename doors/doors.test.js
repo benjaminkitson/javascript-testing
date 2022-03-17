@@ -1,5 +1,9 @@
 const doors = require('./doors');
 
+test('it should only accept an integer argument', () => {
+  expect((typeof (doors(1)))).toBe('integer')
+});
+
 test('it should return an integer', () => {
   expect((typeof (doors(1)))).toBe('integer')
 });
