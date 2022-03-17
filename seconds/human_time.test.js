@@ -14,8 +14,8 @@ test('returns the number of seconds when below 60 seconds', () => {
 
 test('returns minutes and seconds when less than 60 minutes', () => {
   expect(humanTime(65)).toBe('1 minute, 5 seconds')
-})
+});
 
 test('returns hours, minutes and seconds when', () => {
   expect(humanTime(3665)).toBe('1 hour, 1 minute, 5 seconds')
-})
+});
