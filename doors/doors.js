@@ -3,19 +3,22 @@ function doors(number) {
 
   let doorsArr = []
 
-  for (let i = 0; i < number; i++) {
+  for (let i = 1; i <= number; i++) {
     doorsArr.push(false)
   }
 
-  for (let j = 0; j < number; j++) {
-
+  for (let j = 1; j <= number; j++) {
+    doorsArr.forEach((door, index) => {
+      if ((index + 1) % j === 0) {
+        doorsArr[index] = !door
+      }
+    })
+    console.log(doorsArr)
   }
 
 
-
-  return doorsArr
 }
 
-console.log(doors(5))
+doors(5)
 
 module.exports = doors
